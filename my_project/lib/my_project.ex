@@ -31,3 +31,19 @@ defmodule Greeter2 do
 end
 
 Greeter2.hello(fred)
+
+defmodule Greeter3 do
+  def hello(names) when is_list(names) do
+    names
+    |> Enum.join(", ")
+    |> hello
+  end
+
+  def hello(name) when is_binary(name) do
+    pharse() <> name
+  end
+
+  defp pharse, do: "Hello, "
+end
+
+Greeter3.hello(["Sean", "Steve"]) |> IO.puts()
