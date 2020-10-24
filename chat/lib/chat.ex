@@ -9,6 +9,11 @@ defmodule Chat do
     spawn_task(__MODULE__, :receive_message_for_moebi, :moebi@localhost, [message, Node.self()])
   end
 
+  def send_message(recipient, message) do
+    spawn_task(__MODULE__, :receive_message, recipient, [message])
+  end
+
+  @spec receive_message_for_moebi(any, :moebi@localhost) :: any
   def receive_message_for_moebi(message, from) do
     IO.puts(message)
     send_message(from, "chicken?")
