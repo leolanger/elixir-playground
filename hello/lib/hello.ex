@@ -14,3 +14,13 @@ defmodule Example do
     IO.puts("Result: #{result}")
   end
 end
+
+defmodule Example2 do
+  def function(0) do
+    1
+  end
+
+  def function(n) do
+    n * function(n - 1)
+  end
+end

@@ -23,7 +23,7 @@ quoted =
 #  end
 # end
 
-defmodule Example do
+defmodule Example1 do
   #  require Logger
 
   #  def test do
